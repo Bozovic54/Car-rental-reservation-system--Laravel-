@@ -43,6 +43,11 @@ require __DIR__.'/../vendor/autoload.php';
 | to this client's browser, allowing them to enjoy our application.
 |
 */
+$sessionDir = storage_path('framework/sessions');
+if (!is_dir($sessionDir)) {
+    mkdir($sessionDir, 0777, true);
+}
+
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
